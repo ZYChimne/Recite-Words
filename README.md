@@ -1,1 +1,1 @@
-# Recitre Word App for 2021
+# Recite Word App for 2021
