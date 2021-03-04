@@ -18,6 +18,13 @@ class TranslateViewModel: ViewModel() {
     val tarPos: LiveData<Long>
         get() = _tarPos
 
+    private val _srcText = MutableLiveData<Long>()
+    val srcText: LiveData<Long>
+        get() = _srcText
+
+    private val _tarText = MutableLiveData<Long>()
+    val tarText: LiveData<Long>
+        get() = _tarText
 
     init{
 
