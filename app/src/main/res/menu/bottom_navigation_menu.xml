@@ -3,9 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/recite_tab"
+        android:id="@+id/recite_nav"
         android:title="RECITE" />
     <item
-        android:id="@+id/translate_tab"
+        android:id="@+id/translate_nav"
         android:title="TRANSLATE" />
 </menu>
