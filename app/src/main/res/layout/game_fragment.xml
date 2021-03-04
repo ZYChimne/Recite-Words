@@ -105,6 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:backgroundTint="#FFFFFF"
             android:onClick="@{() -> gameViewModel.onSkip()}"
             android:text="@string/skip"
             android:theme="@style/SkipButton"
@@ -127,6 +128,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
+            android:background="@color/colorPrimary"
             android:onClick="@{() -> gameViewModel.onCorrect()}"
             android:text="@string/got_it"
             android:theme="@style/GoButton"
@@ -135,6 +137,12 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/skip_button"
             app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:menu="@menu/bottom_navigation_menu"
+            android:id="@+id/bottom_navigation"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

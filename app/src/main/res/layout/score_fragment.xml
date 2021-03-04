@@ -79,5 +79,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:menu="@menu/bottom_navigation_menu"
+            android:id="@+id/bottom_navigation"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
