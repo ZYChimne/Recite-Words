@@ -137,6 +137,5 @@
             app:layout_constraintStart_toEndOf="@+id/skip_button"
             app:layout_constraintTop_toTopOf="@+id/guideline" />
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

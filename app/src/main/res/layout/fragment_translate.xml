@@ -9,83 +9,78 @@
             type="com.example.android.guesstheword.screens.translate.TranslateViewModel" />
     </data>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:id="@+id/translate_layout"
         android:layout_height="match_parent"
         tools:context=".screens.translate.TranslateFragment">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <Spinner
+            android:id="@+id/src_lang_spin"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:entries="@array/src_lang"
+            app:layout_constraintBottom_toTopOf="@+id/translate_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Spinner
+            android:id="@+id/tar_lang_spin"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:entries="@array/tar_lang"
 
-            <Spinner
-                android:id="@+id/src_lang_spin"
-                android:layout_width="150dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginBottom="32dp"
-                android:entries="@array/src_lang"
-                app:layout_constraintBottom_toTopOf="@+id/translate_text"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@+id/translate_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <Spinner
-                android:id="@+id/tar_lang_spin"
-                android:entries="@array/tar_lang"
-                android:layout_width="150dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="32dp"
-                app:layout_constraintBottom_toTopOf="@+id/translate_text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:id="@+id/translate_text"
+            android:layout_width="340dp"
+            android:layout_height="252dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:autofillHints="@string/src_lang_text"
+            android:background="#F0F0F0"
+            android:hint="@string/src_lang_text"
+            android:inputType="text"
+            android:text="@={translateViewModel.srcText}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/src_lang_spin" />
 
-            <EditText
-                android:id="@+id/translate_text"
-                android:layout_width="340dp"
-                android:layout_height="252dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="32dp"
-                android:autofillHints="@string/src_lang_text"
-                android:background="#F0F0F0"
-                android:hint="@string/src_lang_text"
-                android:inputType="text"
-                android:text="@{translateViewModel.srcText}"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/src_lang_spin" />
+        <Button
+            android:id="@+id/translate_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/colorPrimary"
+            android:onClick="@{()->translateViewModel.clickTranslateButton()}"
+            android:text="@string/translate_button_text"
+            android:textColor="@color/white_text_color"
+            app:layout_constraintBottom_toTopOf="@+id/tar_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/translate_text" />
 
-            <Button
-                android:id="@+id/translate_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginBottom="32dp"
-                android:background="@color/colorPrimary"
-                android:onClick="@{translateViewModel.clickTranslateButton}"
-                android:text="@string/translate_button_text"
-                android:textColor="@color/white_text_color"
-                app:layout_constraintBottom_toTopOf="@+id/tar_text"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/translate_text" />
-
-            <TextView
-                android:id="@+id/tar_text"
-                android:layout_width="340dp"
-                android:layout_height="250dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="32dp"
-                android:text="@{translateViewModel.tarText}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </FrameLayout>
+        <TextView
+            android:id="@+id/tar_text"
+            android:layout_width="340dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:text="@{translateViewModel.tarText}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
