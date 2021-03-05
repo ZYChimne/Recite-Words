@@ -3,11 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/translate_nav"
+    android:label="@string/translate_menu"
     app:startDestination="@id/translateFragment">
 
     <fragment
         android:id="@+id/translateFragment"
         android:name="com.example.android.guesstheword.screens.translate.TranslateFragment"
-        android:label="fragment_translate"
+        android:label="translate_fragment"
         tools:layout="@layout/fragment_translate" />
 </navigation>

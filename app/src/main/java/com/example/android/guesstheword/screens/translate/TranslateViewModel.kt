@@ -2,6 +2,7 @@ package com.example.android.guesstheword.screens.translate
 
 import android.util.Log
 import android.util.Log.WARN
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.lifecycle.LiveData
@@ -38,7 +39,7 @@ class TranslateViewModel: ViewModel() {
 
     }
 
-    fun clickTranslateButton(){
+    fun clickTranslateButton(view : View){
         translate()
     }
 

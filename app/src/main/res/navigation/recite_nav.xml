@@ -18,6 +18,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/recite_nav"
+    android:label="@string/recite_menu"
     app:startDestination="@id/title_destination">
 
     <fragment

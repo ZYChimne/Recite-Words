@@ -49,11 +49,14 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
+                android:autofillHints="@string/src_lang_text"
                 android:background="#F0F0F0"
+                android:hint="@string/src_lang_text"
+                android:inputType="text"
+                android:text="@{translateViewModel.srcText}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="@{translateViewModel.srcText}"
                 app:layout_constraintTop_toBottomOf="@+id/src_lang_spin" />
 
             <Button
@@ -64,8 +67,8 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="32dp"
                 android:background="@color/colorPrimary"
-                android:text="TRANSLATE"
-                android:onClick="@{translateViewModel.clickTranslateButton()}"
+                android:onClick="@{translateViewModel.clickTranslateButton}"
+                android:text="@string/translate_button_text"
                 android:textColor="@color/white_text_color"
                 app:layout_constraintBottom_toTopOf="@+id/tar_text"
                 app:layout_constraintStart_toStartOf="parent"

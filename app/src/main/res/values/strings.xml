@@ -25,9 +25,13 @@
     <string name="got_it">Got it</string>
     <string name="word_is">The word is…</string>
     <string name="quote_format">\"%s\"</string>
-    <string name="score_format">Current Score: %d</string>
+    <string name="score_format">Current Word: %d</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="translate_button_text">" Translate "</string>
+    <string name="src_lang_text">Text to be Translated</string>
+    <string name="recite_menu">RECITE</string>
+    <string name="translate_menu">TRANSLATE</string>
     <string-array name="src_lang">
         <item>Mercury</item>
         <item>Venus</item>
