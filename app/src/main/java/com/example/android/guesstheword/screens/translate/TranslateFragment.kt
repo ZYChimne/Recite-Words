@@ -5,21 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.Spinner
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import com.example.android.guesstheword.R
+import com.example.android.guesstheword.databinding.FragmentTranslateBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [TranslateFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TranslateFragment : Fragment() {
+
+    private lateinit var viewModel: TranslateViewModel
+
+    private lateinit var binding: FragmentTranslateBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +23,27 @@ class TranslateFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+        // Inflate view and obtain an instance of the binding class
+        binding = DataBindingUtil.inflate(
+                inflater,
+                R.layout.fragment_translate,
+                container,
+                false
+        )
+
+        // Get the viewmodel
+        viewModel = ViewModelProvider(this).get(TranslateViewModel::class.java)
+
+        // Set the viewmodel for databinding - this allows the bound layout access to all of the
+        // data in the VieWModel
+        binding.translateViewModel = viewModel
+
+        // Specify the current activity as the lifecycle owner of the binding. This is used so that
+        // the binding can observe LiveData updates
+        binding.setLifecycleOwner(this)
+
+        // Sets up event listening to navigate the player when the game is finished
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_translate, container, false)
     }
